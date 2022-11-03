@@ -10,11 +10,7 @@
         {% endif %}
 
         <title>{% block title %}{{ config.title }}{% endblock title %}</title>
-        {% if current_path is containing("reservoirs") %}
-        <link rel="preload" href="./uwu.wasm" as="fetch" type="application/wasm" crossorigin="">
-        <link rel="modulepreload" href="./uwu.js" type="module" crossorigin="">
-        <link rel="modulepreload" href="./index.js" type="module" crossorigin="">
-        {% endif %}
+
         {% block css %}
             <link rel="stylesheet" href="{{ get_url(path="theme.css", trailing_slash=false) | safe }}">
         {% endblock css %}
