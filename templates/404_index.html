@@ -10,11 +10,7 @@
         {% endif %}
 
         <title>{% block title %}{{ config.title }}{% endblock title %}</title>
-        {% if current_path is containing("reservoirs") %}
-        <link rel="preload" href="./uwu.wasm" as="fetch" type="application/wasm" crossorigin="">
-        <link rel="modulepreload" href="./uwu.js" type="module" crossorigin="">
-        <link rel="modulepreload" href="./index.js" type="module" crossorigin="">
-        {% endif %}
+
         {% block css %}
             <link rel="stylesheet" href="{{ get_url(path="theme.css", trailing_slash=false) | safe }}">
         {% endblock css %}
@@ -30,7 +26,6 @@
                 </div>
                 <div class="header-right">
                     <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-                      <ul>
                         {% set index = get_section(path="_index.md") %}
                         {% for s in index.subsections %}
                             {% set subsection = get_section(path=s) %}
@@ -50,11 +45,10 @@
                         {% if config.extra.twitter %}
                         <li class="nav">
                             <a itemprop="url" href="https://twitter.com/{{ config.extra.twitter }}">
-                                <img class="icon" src="{{ config.base_url }}/icons/twitter.svg" alt="Twitter">
+                                <img class="icon" src="{{ config.base_url }}/icons/twitter.svg" alt="Github">
                             </a>
                         </li>
                         {% endif %}
-                      </ul>
                     </nav>
                 </div>
             </header>
