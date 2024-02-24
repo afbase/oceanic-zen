@@ -45,6 +45,13 @@
                             </a>
                         </li>
                         {% endif %}
+                        {% if config.extra.bluesky %}
+                        <li class="nav">
+                            <a itemprop="url" href="https://bsky.app/profile/{{ config.extra.bluesky }}">
+                                <img class="icon" src="{{ config.base_url }}/icons/bluesky.svg" alt="bluesky">
+                            </a>
+                        </li>
+                        {% endif %}
                         {% if config.extra.twitter %}
                         <li class="nav">
                             <a itemprop="url" href="https://twitter.com/{{ config.extra.twitter }}">
