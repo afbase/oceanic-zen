@@ -200,15 +200,18 @@ img {
     width: 840px;
 }
 
-// New styles for image with caption shortcode
+// Updated styles for image with caption shortcode
 .image-with-caption {
-    margin: 2em 0;
+    margin: 2em auto; // Changed from 2em 0 to 2em auto
     width: 100%;
+    max-width: 800px; // Added max-width to prevent overly wide images
+    text-align: center; // Added to center the image
 
     img {
         width: 100%;
         height: auto;
         display: block;
+        margin: 0 auto; // Centers the image
     }
 
     figcaption {
@@ -230,10 +233,12 @@ img {
     }
 }
 
-// New styles for YouTube video with caption shortcode
+// Updated styles for YouTube video with caption shortcode
 .youtube-with-caption {
-    margin: 2em 0;
+    margin: 2em auto; // Changed from 2em 0 to 2em auto
     width: 100%;
+    max-width: 800px; // Added max-width to prevent overly wide videos
+    text-align: center; // Added to center the video container
 
     .youtube-container {
         position: relative;
