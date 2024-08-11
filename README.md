@@ -41,4 +41,5 @@ github = "github author name"
 twitter = "twitter author name"
 ```
 
-Font [Iosevka](https://typeof.net/Iosevka/)
+### Fonts
+Raleway and Source Code Pro

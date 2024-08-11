@@ -1,32 +1,85 @@
 @import "colors";
 
+// Font declarations
 @font-face {
-    font-family: 'Iosevka';
-    src: url("/fonts/iosevka-regular.woff2");
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Iosevka';
-    src: url("/fonts/iosevka-italic.woff2");
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Iosevka';
-    src: url("/fonts/iosevka-bold.woff2");
-    font-weight: bold;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Iosevka';
-    src: url("/fonts/iosevka-bolditalic.woff2");
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
+    font-family: 'Raleway';
+    src: url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
 }
 
-$font: "Iosevka", sans-serif;
-$font-mono:  "Iosevka", monospace;
+@font-face {
+    font-family: 'Raleway';
+    src: url('/fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('/fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('/fonts/SourceCodePro-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 900;
+    font-style: italic;
+}
+
+$font: "Raleway", sans-serif;
+$font-mono: "Source Code Pro", monospace;
+
+body {
+    font-family: $font;
+    font-optical-sizing: auto;
+    font-weight: 400; // Default weight
+    font-style: normal;
+    background: $black;
+    color: $white;
+}
+
+// Utility classes for Raleway font weights
+@for $weight from 1 through 9 {
+    .raleway-weight-#{$weight}00 {
+        font-family: $font;
+        font-optical-sizing: auto;
+        font-weight: #{$weight}00;
+        font-style: normal;
+    }
+}
+
+// Utility classes for Source Code Pro font weights
+@for $weight from 2 through 9 {
+    .source-code-pro-weight-#{$weight}00 {
+        font-family: $font-mono;
+        font-optical-sizing: auto;
+        font-weight: #{$weight}00;
+        font-style: normal;
+    }
+}
+
+
+
+body {
+    font-family: $font;
+    font-optical-sizing: auto;
+    font-weight: 400; // Default weight
+    font-style: normal;
+    background: $black;
+    color: $white;
+}
+
+// You can create utility classes for different font weights if needed
+@for $weight from 1 through 9 {
+    .font-weight-#{$weight}00 {
+        font-weight: #{$weight}00;
+    }
+}
+
+// $font-mono:  "Iosevka", monospace;
 $padding: 8px;
 
 body {
@@ -139,14 +192,18 @@ pre {
     padding: 1em;
     margin: 1em;
     overflow-x: auto;
+    font-family: $font-mono;
+    font-weight: 400; // Default weight for code
 }
 
 code {
-    font: 16px $font-mono;
+    font-family: $font-mono;
+    font-weight: 400; // Default weight for code
 }
 
 p > code {
     font-weight: bold;
+    font-family: $font-mono;
     color: $gray;
 }
 
@@ -202,16 +259,16 @@ img {
 
 // Updated styles for image with caption shortcode
 .image-with-caption {
-    margin: 2em auto; // Changed from 2em 0 to 2em auto
+    margin: 2em auto;
     width: 100%;
-    max-width: 800px; // Added max-width to prevent overly wide images
-    text-align: center; // Added to center the image
+    max-width: 800px;
+    text-align: center;
 
     img {
         width: 100%;
         height: auto;
         display: block;
-        margin: 0 auto; // Centers the image
+        margin: 0 auto;
     }
 
     figcaption {
@@ -225,6 +282,7 @@ img {
 
         strong {
             color: $white;
+            font-weight: 700; // Bold weight for Raleway
         }
 
         em {
@@ -235,10 +293,10 @@ img {
 
 // Updated styles for YouTube video with caption shortcode
 .youtube-with-caption {
-    margin: 2em auto; // Changed from 2em 0 to 2em auto
+    margin: 2em auto;
     width: 100%;
-    max-width: 800px; // Added max-width to prevent overly wide videos
-    text-align: center; // Added to center the video container
+    max-width: 800px;
+    text-align: center;
 
     .youtube-container {
         position: relative;
@@ -267,10 +325,18 @@ img {
 
         strong {
             color: $white;
+            font-weight: 700; // Bold weight for Raleway
         }
 
         em {
             font-style: italic;
         }
     }
+}
+
+// tooltip
+.tooltip-wrapper {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
 }
