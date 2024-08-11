@@ -339,3 +339,41 @@ img {
     text-decoration: underline;
     cursor: pointer;
 }
+
+// Footnote styles
+.footnote-definition {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid $gray_light;
+    
+    &:first-of-type {
+        border-top: none;
+    }
+}
+
+.footnote-definition-label {
+    float: left;
+    margin-right: 0.5em;
+    font-weight: bold;
+}
+
+.footnote-definition p {
+    margin-bottom: 0.5em;
+}
+
+// Style for footnote references in the text
+sup[id^='footnote-ref'] {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    top: -0.5em;
+    
+    a {
+        color: $blue;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
