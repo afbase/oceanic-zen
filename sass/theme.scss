@@ -2,15 +2,15 @@
 
 // Font declarations
 @font-face {
-    font-family: 'Raleway';
-    src: url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Regular.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Raleway';
-    src: url('/fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Italic.ttf') format('truetype');
     font-weight: 100 900;
     font-style: italic;
 }
@@ -333,18 +333,50 @@ img {
     }
 }
 
-// tooltip
-.tooltip-wrapper {
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
-}
+// .tooltip {
+//     position: relative;
+//     display: inline-block;
+//     border-bottom: 1px dotted black;
+//   }
+  
+//   .tooltip .tooltiptext {
+//     visibility: hidden;
+//     width: 120px;
+//     background-color: #555;
+//     color: #fff;
+//     text-align: center;
+//     border-radius: 6px;
+//     padding: 5px 0;
+//     position: absolute;
+//     z-index: 1;
+//     bottom: 125%;
+//     left: 50%;
+//     margin-left: -60px;
+//     opacity: 0;
+//     transition: opacity 0.3s;
+//   }
+  
+//   .tooltip .tooltiptext::after {
+//     content: "";
+//     position: absolute;
+//     top: 100%;
+//     left: 50%;
+//     margin-left: -5px;
+//     border-width: 5px;
+//     border-style: solid;
+//     border-color: #555 transparent transparent transparent;
+//   }
+  
+//   .tooltip:hover .tooltiptext {
+//     visibility: visible;
+//     opacity: 1;
+//   }
 
 // Footnote styles
 .footnote-definition {
     margin-top: 2em;
     padding-top: 1em;
-    border-top: 1px solid $gray_light;
+    // border-top: 1px solid $gray_light;
     
     &:first-of-type {
         border-top: none;
@@ -364,7 +396,7 @@ img {
 // Style for footnote references in the text
 sup[id^='footnote-ref'] {
     font-size: 0.75em;
-    line-height: 0;
+    // line-height: 0;
     position: relative;
     top: -0.5em;
     
