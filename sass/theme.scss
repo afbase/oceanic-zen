@@ -199,3 +199,73 @@ img {
 #california-chart {
     width: 840px;
 }
+
+// New styles for image with caption shortcode
+.image-with-caption {
+    margin: 2em 0;
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    figcaption {
+        text-align: center;
+        margin-top: 0.5em;
+        font-size: 0.9em;
+        color: $gray_light;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+
+        strong {
+            color: $white;
+        }
+
+        em {
+            font-style: italic;
+        }
+    }
+}
+
+// New styles for YouTube video with caption shortcode
+.youtube-with-caption {
+    margin: 2em 0;
+    width: 100%;
+
+    .youtube-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; // 16:9 aspect ratio
+        height: 0;
+        overflow: hidden;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    figcaption {
+        text-align: center;
+        margin-top: 0.5em;
+        font-size: 0.9em;
+        color: $gray_light;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+
+        strong {
+            color: $white;
+        }
+
+        em {
+            font-style: italic;
+        }
+    }
+}
