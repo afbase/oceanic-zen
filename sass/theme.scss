@@ -413,3 +413,69 @@ sup[id^='footnote-ref'] {
 .article-body-spacing {
     margin-top: 2rem;
 }
+
+// claude-ai stuff for a tool tip
+// Tooltip wrapper
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor;
+    cursor: help;
+  
+    &:hover {
+      &::before,
+      &::after {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  
+    // Tooltip box
+    &::before {
+      content: attr(data-bs-title);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.5rem 1rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      font-size: 0.875rem;
+      line-height: 1.4;
+      text-align: center;
+      border-radius: 4px;
+      white-space: nowrap;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+      z-index: 1000;
+      margin-bottom: 5px;
+    }
+  
+    // Tooltip arrow
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+      margin-bottom: -5px;
+    }
+  }
+  
+  // Optional: Add media query for mobile devices
+  @media (max-width: 768px) {
+    .tooltip-wrapper {
+      &::before {
+        width: 200px;
+        white-space: normal;
+      }
+    }
+  }
