@@ -415,7 +415,6 @@ sup[id^='footnote-ref'] {
 }
 
 // claude-ai stuff for a tool tip
-// Tooltip wrapper
 .tooltip-wrapper {
     position: relative;
     display: inline-block;
@@ -438,19 +437,25 @@ sup[id^='footnote-ref'] {
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
-      padding: 0.5rem 1rem;
-      background-color: rgba(0, 0, 0, 0.8);
+      padding: 0.75rem;
+      min-width: 200px;
+      max-width: 300px;
+      width: max-content;
+      background-color: rgba(0, 0, 0, 0.9);
       color: white;
       font-size: 0.875rem;
-      line-height: 1.4;
-      text-align: center;
+      line-height: 1.5;
+      text-align: left;
       border-radius: 4px;
-      white-space: nowrap;
+      white-space: normal;
+      word-wrap: break-word;
+      hyphens: auto;
       visibility: hidden;
       opacity: 0;
       transition: opacity 0.2s ease-in-out;
       z-index: 1000;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
   
     // Tooltip arrow
@@ -460,22 +465,30 @@ sup[id^='footnote-ref'] {
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
-      border-width: 5px;
+      border-width: 6px;
       border-style: solid;
-      border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+      border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
       visibility: hidden;
       opacity: 0;
       transition: opacity 0.2s ease-in-out;
-      margin-bottom: -5px;
+      margin-bottom: -6px;
     }
   }
   
-  // Optional: Add media query for mobile devices
+  // Media query adjustments
   @media (max-width: 768px) {
     .tooltip-wrapper {
       &::before {
-        width: 200px;
-        white-space: normal;
+        min-width: 160px;
+        max-width: 260px;
+        width: max-content;
+        left: 0;
+        transform: translateX(0);
+      }
+  
+      &::after {
+        left: 15%;
+        transform: translateX(0);
       }
     }
   }
