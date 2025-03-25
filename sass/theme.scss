@@ -416,79 +416,20 @@ sup[id^='footnote-ref'] {
 
 // claude-ai stuff for a tool tip
 .tooltip-wrapper {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
     border-bottom: 1px dotted currentColor;
     cursor: help;
-  
-    &:hover {
-      &::before,
-      &::after {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-  
-    // Tooltip box
-    &::before {
-      content: attr(data-bs-title);
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 0.75rem;
-      min-width: 200px;
-      max-width: 300px;
-      width: max-content;
-      background-color: rgba(0, 0, 0, 0.9);
-      color: white;
-      font-size: 0.875rem;
-      line-height: 1.5;
-      text-align: left;
-      border-radius: 4px;
-      white-space: normal;
-      word-wrap: break-word;
-      hyphens: auto;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.2s ease-in-out;
-      z-index: 1000;
-      margin-bottom: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    }
-  
-    // Tooltip arrow
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border-width: 6px;
-      border-style: solid;
-      border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.2s ease-in-out;
-      margin-bottom: -6px;
-    }
+}
+
+/* Increase spacing between bullet points */
+.article-body-spacing > ul > li {
+    margin-bottom: 1em; /* Increase space between list items */
   }
   
-  // Media query adjustments
-  @media (max-width: 768px) {
-    .tooltip-wrapper {
-      &::before {
-        min-width: 160px;
-        max-width: 260px;
-        width: max-content;
-        left: 0;
-        transform: translateX(0);
-      }
-  
-      &::after {
-        left: 15%;
-        transform: translateX(0);
-      }
-    }
+  /* Adjust margins to make bullet points narrower */
+  .article-body-spacing > ul {
+    padding-left: 1em; /* Reduce left padding */
+    padding-right: 1em; /* Reduce right padding */
+    max-width: 95%; /* Ensure the list doesn't stretch too wide */
+    margin-left: auto;
+    margin-right: auto;
   }
