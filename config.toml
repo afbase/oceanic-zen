@@ -5,8 +5,10 @@ compile_sass = true
 build_search_index = false
 
 [markdown]
-highlight_code = true
-highlight_theme = "visual-studio-dark"
+
+[markdown.highlighting]
+theme = "nord"
+style = "class"
 
 [extra]
 author = "Barlog M."

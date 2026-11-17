@@ -9,6 +9,10 @@ Oceanic Zen is a theme for [Zola](https://www.getzola.org/) static site generato
 ![Screenshot](screenshot-index.png)
 ![Screenshot](screenshot.png)
 
+## Requirements
+
+Zola 0.23 or newer. The templates use Tera v2 syntax, which older versions of Zola cannot parse.
+
 ## Installation
 
 Download theme to your `themes` directory:
